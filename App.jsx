@@ -1,8 +1,8 @@
 import React from 'react';
-import HomePage from './components/HomePage.jsx';
+import HomePage from './components/HomePage.js';
 
 const App = () => {
-  return <HomePage />;
+  return React.createElement(HomePage, null);
 };
 
 export default App;
