@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF--8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e%3ctext x='50' y='50' font-size='80' font-family='Arial, sans-serif' fill='%234f46e5' text-anchor='middle' dominant-baseline='central'%3eG%3c/text%3e%3c/svg%3e" />
+    <meta charset="UTF-8" />
+    <!-- Using an embedded SVG to prevent 404 errors for the favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎨%3C/text%3E%3C/svg%3E">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GenAI</title>
+    <title>GenAi</title>
+    
+    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind CSS Configuration to define custom brand colors used in the app -->
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              'brand-primary': '#4f46e5',
-              'brand-secondary': '#7c3aed',
-              'slate-950': '#020617',
-              'slate-900': '#0f172a',
-              'slate-800': '#1e293b',
-              'slate-400': '#94a3b8',
-              'slate-200': '#e2e8f0',
+              'brand-primary': '#6366f1',   // Indigo 500
+              'brand-secondary': '#ec4899', // Pink 500
             }
           }
         }
       }
     </script>
+    
+    <!-- The main application script. Using a relative path for compatibility with services like GitHub Pages. -->
+    <script type="module" src="./index.tsx"></script>
+
+    <!-- The warning about using the Tailwind CDN is expected in this development environment. -->
   <script type="importmap">
 {
   "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0"
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0"
   }
 }
 </script>
 </head>
-  <body class="bg-slate-950 text-slate-200">
+  <body class="bg-slate-950 text-white">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
